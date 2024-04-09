@@ -6,7 +6,7 @@ bash
 
 
 
-//clone 到本地
+//clone 到本地,使用SSH的链接
 
 git clone xxxx.git
 
