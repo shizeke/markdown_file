@@ -3,22 +3,27 @@
 //Callback & listener的区分
 
 Callback
-eg:
-Server:class A {registerCallback1 ， registerCallback2}
+
+例如：
+（1）Server:class A {registerCallback1 ， registerCallback2}
 
 Client:class B
 Client:class C
 
-
 aidl_interface iD
 
-
+（2）callback大致流程
 B --> IBinder(iD).registerCallback1 --> A.registerCallback1(*funcB) --> A.callback1 = funcB;
-
 C --> IBinder(iD).registerCallback2 --> A.registerCallback2(*funcC) --> A.callback2 = funcC;
 
+在A中调用callback1和callback2。
 
-不能用Callback，需要用listener。
+
+（3）listener流程
+
+B.addListener(Blistener) -> IBinder(iD).addListener -> A.addListener 将Blistener加入listener list里面
+C.addListener(Clistener) -> IBinder(iD).addListener -> A.addListener 将Clistener加入listener list里面
+在A中，有事件发生时，例如 状态or输入 变化，触发listner change , 通知listner list里面的所有注册的listener。
 
 
 **listener 事件驱动，事件源为 server，对应多个 Client。**
