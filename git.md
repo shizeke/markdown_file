@@ -1,3 +1,5 @@
+# Window下操作git
+
 //进入bash界面
 
 bash
@@ -12,14 +14,16 @@ git clone xxxx.git
 
 //查看branch和远程的仓库
 
- git branch && git remote -v
+git branch && git remote -v
 
 
 
 //添加修改文件，并上传到github上
 
 git add .
+
 git commit
+
 git push origin main
 
 
@@ -50,3 +54,11 @@ git remote set-url origin  https://<your_token>@github.com/<USERNAME>/<REPO>.git
 //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为token
 
 //git remote set-url origin https://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@github.com/shizeke/markdown_file.git
+
+
+
+
+
+//更多权限的token ：`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` 
+
+//git remote set-url origin https://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@github.com/shizeke/markdown_file.git
