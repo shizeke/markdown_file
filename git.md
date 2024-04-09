@@ -45,3 +45,8 @@ git remote set-url origin  https://<your_token>@github.com/<USERNAME>/<REPO>.git
 然后再次执行 pull push 操作
 ```
 
+
+
+//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为token
+
+//git remote set-url origin https://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@github.com/shizeke/markdown_file.git
